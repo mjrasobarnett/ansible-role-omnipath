@@ -1,0 +1,8 @@
+---
+- name: "Install core OPA packages"
+  yum:
+    name: "opa-basic-tools"
+    state: present
+  loop:
+    - "opa-basic-tools"
+    - "rdma-core"
