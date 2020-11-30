@@ -1,8 +1,16 @@
 ---
 - name: "Install core OPA packages"
   yum:
-    name: "opa-basic-tools"
+    name: "{{ item }}"
     state: present
   loop:
     - "opa-basic-tools"
     - "rdma-core"
+
+- name: "Install additional IB diagnostic utils"
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "infiniband-diags"
+    - "ibutils"
